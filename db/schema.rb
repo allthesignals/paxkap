@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150526234552) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,7 +27,11 @@ ActiveRecord::Schema.define(version: 20150526234552) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "donations", force: :cascade do |t|
+=======
+  create_table "neighborhoods", force: :cascade do |t|
+>>>>>>> 80637926e9255f34d0f5553c56006c06d5001adc
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

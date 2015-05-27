@@ -23,6 +23,13 @@
  * Made By MaterializeCSS.com
  */
 
+#logo-container {
+	background-image: url('/pax_logo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-left: 90px;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
