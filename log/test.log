@@ -13,3 +13,696 @@
   [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150504021323')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150504021333')
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateNeighborhoods (20150504021333)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "neighborhoods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150504021333"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateBusinesses (20150504022424)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150504022424"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateUsers (20150526234512)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150526234512"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateCampaigns (20150526234517)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "campaigns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150526234517"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateDonations (20150526234552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "donations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150526234552"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:25:21', '2015-05-27 01:25:21', 298486374)[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+StaticPagesControllerTest: test_should_get_home
+-----------------------------------------------
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14928ms (Views: 14927.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "campaigns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "donations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "neighborhoods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar, "email" varchar, "address" varchar, "last_name" varchar) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527014357')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150504021333')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150504022424')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150526234512')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150526234517')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150526234552')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527013105')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527013445')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527014229')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "businesses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "campaigns"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "donations"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "neighborhoods"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:23', '2015-05-27 01:49:23', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:49:54', '2015-05-27 01:49:54', 298486374)[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:51:45', '2015-05-27 01:51:45', 298486374)[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:52:34', '2015-05-27 01:52:34', 298486374)[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:56:00', '2015-05-27 01:56:00', 298486374)[0m
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:57:25', '2015-05-27 01:57:25', 298486374)[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'USER@foo.COM' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'A_US-ER@foo.bar.org' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice+bob@baz.cn' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '     ' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-27 01:57:25.789531"], ["updated_at", "2015-05-27 01:57:25.789531"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:23', '2015-05-27 01:58:23', 298486374)[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-27 01:58:23.219522"], ["updated_at", "2015-05-27 01:58:23.219522"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('     ') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 01:58:48', '2015-05-27 01:58:48', 298486374)[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'USER@foo.COM' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'A_US-ER@foo.bar.org' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice+bob@baz.cn' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-27 01:58:48.184473"], ["updated_at", "2015-05-27 01:58:48.184473"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'USER@EXAMPLE.COM' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '     ' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:03:54', '2015-05-27 02:03:54', 298486374)[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '     ' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'USER@foo.COM' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'A_US-ER@foo.bar.org' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice+bob@baz.cn' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-27 02:03:54.325430"], ["updated_at", "2015-05-27 02:03:54.325430"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'USER@EXAMPLE.COM' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "campaigns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "donations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "neighborhoods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar, "email" varchar, "address" varchar, "last_name" varchar) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527020417')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150504021333')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150504022424')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150526234512')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150526234517')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150526234552')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527013105')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527013445')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527014229')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527014357')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "businesses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "campaigns"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "donations"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "neighborhoods"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:04:59', '2015-05-27 02:04:59', 298486374)
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('     ') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-27 02:04:59.686341"], ["updated_at", "2015-05-27 02:04:59.686341"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+StaticPagesControllerTest: test_should_get_home
+-----------------------------------------------
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 392ms (Views: 392.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "businesses"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "businesses" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "campaigns"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "campaigns" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "donations"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "donations" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "neighborhoods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "neighborhoods" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-05-27 02:05:37', '2015-05-27 02:05:37', 298486374)[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+StaticPagesControllerTest: test_should_get_home
+-----------------------------------------------
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 378ms (Views: 377.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_address_should_be_present
+----------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-27 02:05:38.135514"], ["updated_at", "2015-05-27 02:05:38.135514"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('     ') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
