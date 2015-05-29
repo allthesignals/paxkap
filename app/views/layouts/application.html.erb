@@ -11,17 +11,29 @@
 <body>
 <div class="navbar-fixed">
   <nav class="white" role="navigation">
+    <% if logged_in? %>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Settings", '#' %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+      </ul>
+    <% end %>
     <div class="nav-wrapper container">
       <a id="logo-container" href="/" class="brand-logo"> Pax</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Locals</a></li>
         <li><a href="#">Businesses</a></li>
-        <li><a href="#">Login</a></li>
+        <% if logged_in? %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+        <% else %>
+          <li><a href="/signup">Login/Register</a></li>
+        <% end %>
       </ul>
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Locals</a></li>
         <li><a href="#">Businesses</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/signup">Login/Register</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
