@@ -10,4 +10,15 @@ class Campaign < ActiveRecord::Base
   validates :goal, presence: true
 
   belongs_to :user
+
+  rails_admin do
+    list do
+      field :id
+      field :title
+      field :description
+      field :story
+      field :target_date
+      field :goal
+    end
+  end
 end
