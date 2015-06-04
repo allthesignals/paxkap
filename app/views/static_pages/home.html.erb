@@ -7,64 +7,20 @@
         <h5 class="header col s12 light">Help build your neighborhood</h5>
       </div>
       <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Active Campaigns</a>
+        <%= link_to "Active Campaigns", campaigns_path, class: "btn-large waves-effect waves-light teal lighten-1", id: "download-button" %>
       </div>
       <br><br>
 
     </div>
   </div>
-  <div class="parallax"><img src="http://lorempixel.com/1400/800/nightlife/7/" alt="Unsplashed background img 2"></div>
+  <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"></div>
 </div>
 
 <div class="container">
   <div class="section">
     Recent
-   <div class="row">
-      <div class="col l4 s12">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="http://lorempixel.com/350/250/nightlife/4/">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">FunSquare <i class="mdi-navigation-more-vert right"></i></span>
-            <p><a href="#">Campaign Goal: $3000</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">FunSquare <i class="mdi-navigation-close right"></i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col l4 s12">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="http://lorempixel.com/350/250/nightlife/5/">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">DansHaus<i class="mdi-navigation-more-vert right"></i></span>
-            <p><a href="#">Campaign Goal: $3000</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">DansHaus <i class="mdi-navigation-close right"></i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col l4 s12">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="http://lorempixel.com/350/250/nightlife/6/">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">CountryVenue <i class="mdi-navigation-more-vert right"></i></span>
-            <p><a href="#">Campaign Goal: $3000</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">CountryVenue <i class="mdi-navigation-close right"></i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-      </div>
+    <div class="row">
+        <%= render partial: 'campaigns/campaign_card', collection: @recent_campaigns, :as => :campaign %>
     </div>
   </div>
 </div>

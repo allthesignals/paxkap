@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529014733) do
+ActiveRecord::Schema.define(version: 20150603234836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,16 @@ ActiveRecord::Schema.define(version: 20150529014733) do
   end
 
   create_table "campaigns", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.string   "story"
+    t.integer  "goal"
+    t.date     "target_date"
+    t.integer  "user_id"
   end
+
+  add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id", using: :btree
 
   create_table "donations", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -48,4 +55,5 @@ ActiveRecord::Schema.define(version: 20150529014733) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "campaigns", "users"
 end
