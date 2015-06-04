@@ -1,6 +1,47 @@
+<div id="campaign-view-parallax" class="parallax-container">
+  <div class="parallax"><%= image_tag @campaign.photo.url %></div>
+</div>
 <div class="container">
   <div class="section">
-    <%= @campaign.title %>
-    <p>Invest</p>
+    <div class="row">
+      <div class="col m8 s12">
+        <p class="flow-text">
+        <strong><%= @campaign.title %></strong>
+        <h6><a class="modal-trigger waves-effect waves-light btn-large" href="#modal1">Donate</a></h6>
+        </p>
+      </div>
+      <div class="col m4 s12"><p class="flow-text">
+        <strong>Goal: <h3><%= number_to_currency @campaign.goal %></h3></p></strong>
+      </div>
+    </div>
+    <h6>What we're working towards:</h6>
+    <p class="flow-text"><%= @campaign.description %></p>
+    <h6>What we're all about:</h6>
+    <p class="flow-text"><%= @campaign.story %></p>
   </div>
+</div>
+<div id="modal1" class="modal">
+  <%= form_tag("/stripe") do %>
+  <div class="modal-content">
+    <div class="input-field col s12 m6">
+      <label for="name">First Name</label>
+      <%= text_field :name, class: "validate" %>
+    </div>
+    <div class="input-field col s12 m6">
+      
+      <%= text_field :last_name, class: "validate" %>
+    </div>
+    <div class="input-field col s12 m6">
+      
+      <%= text_field :address, class: "validate" %>
+    </div> 
+    <div class="input-field col s12 m6">
+      
+      <%= email_field :email, class: "validate" %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= submit_tag "Purchase Kapital", class: "btn" %>
+  </div>
+  <% end %>
 </div>

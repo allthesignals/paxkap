@@ -21,5 +21,6 @@
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
     $(".dropdown-button").dropdown();
+    $('.modal-trigger').leanModal();
   }); // end of document ready
 })(jQuery); // end of jQuery name space
