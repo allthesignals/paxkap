@@ -15,12 +15,19 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
-(function($){
-  $(function(){
+$(document).ready(function() {
+  materializeIntializers();
+});
+
+$( document ).on('page:load',function() {
+  materializeIntializers();
+});
+
+function materializeIntializers() {
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
     $(".dropdown-button").dropdown();
     $('.modal-trigger').leanModal();
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+}
+

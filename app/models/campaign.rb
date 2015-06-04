@@ -19,6 +19,7 @@ class Campaign < ActiveRecord::Base
       field :story
       field :target_date
       field :goal
+      field :photo
     end
   end
 end
